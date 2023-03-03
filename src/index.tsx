@@ -17,10 +17,13 @@ const Routes = () => {
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
+
 root.render(
   <React.StrictMode>
     <HashRouter>
-      <Routes />
+      <App>
+        <Routes />
+      </App>
     </HashRouter>
   </React.StrictMode>
 );

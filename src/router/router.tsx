@@ -23,14 +23,14 @@ const routes: RouteObject[] = [
     },
 ];
 
-export const usePrimaryDrawerItemList = () => {
+export const useDrawerList = () => {
 
     return useMemo(
         () => [
             {
                 path: '/',
                 title: 'Custom Hooks',
-                icon: PhishingIcon,
+                icon: <PhishingIcon />,
             }
         ],
         [],

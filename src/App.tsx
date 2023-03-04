@@ -1,7 +1,7 @@
-import { FunctionComponent, PropsWithChildren } from "react";
+import React, { FunctionComponent, PropsWithChildren } from 'react';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 
-import Box from "@mui/material/Box";
+import Box from '@mui/material/Box';
 import CssBaseline from '@mui/material/CssBaseline';
 
 import { drawerWidth } from './lib/constant';
@@ -14,22 +14,20 @@ const darkTheme = createTheme({
   },
 });
 
-const App: FunctionComponent<PropsWithChildren> = ({ children }) => {
-  return (
-    <ThemeProvider theme={darkTheme}>
-      <Box sx={{ display: 'flex' }}>
-        <CssBaseline />
-        <ResponsiveDrawer />
-        <Box
-          component="main"
-          sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` } }}
-        >
-          {children}
-        </Box>
+const App: FunctionComponent<PropsWithChildren> = ({ children }) => (
+  <ThemeProvider theme={darkTheme}>
+    <Box sx={{ display: 'flex' }}>
+      <CssBaseline />
+      <ResponsiveDrawer />
+      <Box
+        component="main"
+        sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` } }}
+      >
+        {children}
       </Box>
+    </Box>
 
-    </ThemeProvider>
-  );
-}
+  </ThemeProvider>
+);
 
 export default App;

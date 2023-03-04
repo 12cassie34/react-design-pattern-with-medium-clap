@@ -18,6 +18,7 @@
     "@typescript-eslint/eslint-plugin": "^5.13.0",
     "@typescript-eslint/parser": "^5.0.0",
     "eslint-config-airbnb-typescript": "^17.0.0",
+    "lint-staged": "^13.1.2",
     "localforage": "^1.10.0",
     "match-sorter": "^6.3.1",
     "next": "^13.2.3",
@@ -34,7 +35,12 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "linter": "npx eslint . --ext .js,.jsx,.ts,.tsx --fix"
+    "linter": "npx eslint . --ext .js,.jsx,.ts,.tsx --fix",
+    "prepare": "husky install",
+    "scriptname": "husky install"
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx}": "npx eslint . --ext .js,.jsx,.ts,.tsx --fix"
   },
   "eslintConfig": {
     "extends": [

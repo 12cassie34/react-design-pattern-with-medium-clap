@@ -4,34 +4,45 @@ import dynamic from 'next/dynamic';
 
 import PhishingIcon from '@mui/icons-material/Phishing';
 
-const CustomHooks = dynamic(() => import('../pages/CustomHooks'), {
-  suspense: true,
+const Home = dynamic(() => import('../pages/Home'), {
+    suspense: true,
 });
-
+const CustomHooks = dynamic(() => import('../pages/CustomHooks'), {
+    suspense: true,
+});
 const NotFound = dynamic(() => import('../pages/NotFound'), {
-  suspense: true,
+    suspense: true,
 });
 
 const routes: RouteObject[] = [
-  {
-    path: '/',
-    element: <CustomHooks />,
-  },
-  {
-    path: '*',
-    element: <NotFound />,
-  },
+    {
+        path: '/',
+        element: <Home />,
+    },
+    {
+        path: '/custom-hooks',
+        element: <CustomHooks />,
+    },
+    {
+        path: '*',
+        element: <NotFound />,
+    },
 ];
 
 export const useDrawerList = () => useMemo(
-  () => [
-    {
-      path: '/',
-      title: 'Custom Hooks',
-      icon: <PhishingIcon />,
-    },
-  ],
-  [],
+    () => [
+        {
+            path: '/',
+            title: 'Why this project?',
+            icon: <PhishingIcon />,
+        },
+        {
+            path: '/custom-hooks',
+            title: 'Custom Hooks',
+            icon: <PhishingIcon />,
+        },
+    ],
+    [],
 );
 
 export default routes;

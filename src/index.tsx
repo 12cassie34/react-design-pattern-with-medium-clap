@@ -1,12 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { HashRouter, useRoutes } from 'react-router-dom';
-
-import App from './App';
+import { BrowserRouter, useRoutes } from 'react-router-dom';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
 
 import reportWebVitals from './reportWebVitals';
 import './index.css';
 import routes from './router/router';
+
+import App from './App';
+
+const root = ReactDOM.createRoot(
+  document.getElementById('root') as HTMLElement,
+);
+
+const darkTheme = createTheme({
+  palette: {
+    mode: 'dark',
+  },
+});
 
 const Routes = () => {
   const element = useRoutes(routes);
@@ -14,17 +25,15 @@ const Routes = () => {
   return element;
 };
 
-const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement,
-);
-
 root.render(
   <React.StrictMode>
-    <HashRouter>
-      <App>
-        <Routes />
-      </App>
-    </HashRouter>
+    <ThemeProvider theme={darkTheme}>
+      <BrowserRouter>
+        <App>
+          <Routes />
+        </App>
+      </BrowserRouter>
+    </ThemeProvider>
   </React.StrictMode>,
 );
 

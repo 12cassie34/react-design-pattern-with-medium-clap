@@ -1,17 +1,18 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
+/* eslint-disable react/jsx-indent */
 import { BrowserRouter, useRoutes } from 'react-router-dom';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
+import React from 'react';
+import ReactDOM from 'react-dom/client';
 
-import reportWebVitals from './reportWebVitals';
 import './index.css';
+import reportWebVitals from './reportWebVitals';
 import routes from './router/router';
 
 import App from './App';
 
-const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement,
-);
+const appContainer = document.getElementById('root') as Element | DocumentFragment;
+
+const root = ReactDOM.createRoot(appContainer);
 
 const darkTheme = createTheme({
   palette: {

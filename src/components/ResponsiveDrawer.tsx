@@ -1,10 +1,12 @@
 import { FunctionComponent, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
+import { useTheme } from '@mui/material/styles';
 
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
 import IconButton from '@mui/material/IconButton';
+import Link from '@mui/material/Link';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
@@ -14,12 +16,14 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 
-import { drawerWidth } from '../lib/constant';
+import { drawerWidth } from '../lib/constant'
 import { useDrawerList } from '../router/router';
 
 const ResponsiveDrawer: FunctionComponent = () => {
     const [mobileOpen, setMobileOpen] = useState(false);
     const drawerList = useDrawerList();
+    const currentPath = useLocation().pathname;
+    const theme = useTheme();
 
     const handleDrawerToggle = () => {
         setMobileOpen(!mobileOpen);
@@ -29,7 +33,7 @@ const ResponsiveDrawer: FunctionComponent = () => {
         <List>
             {drawerList.map(({ path, title, icon }) => (
                 <ListItem key={title}>
-                    <Link to={path}>
+                    <Link href={path} underline="none" color="#ffffff" sx={{ backgroundColor: currentPath === path ? theme.palette.info.main : '', borderRadius: '10px' }}>
                         <ListItemButton>
                             <ListItemIcon>
                                 {icon}

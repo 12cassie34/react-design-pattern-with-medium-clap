@@ -11,6 +11,7 @@ import Typography from "@mui/material/Typography";
 const MediumClap: FunctionComponent = () => {
     const [isHover, setIsHover] = useState(false);
     const [addedClap, setAddedClap] = useState(0);
+    const [totalClap, setTotalClap] = useState(200);
 
     const boxShadowAnimation = useSpring({
         from: { opacity: isHover ? 0 : 1, transition: 'ease' },
@@ -29,13 +30,15 @@ const MediumClap: FunctionComponent = () => {
                 config: { duration: 700 },
             });
             setAddedClap(addedClap + 1);
+            setTotalClap(totalClap + 1);
         }
     };
 
     return (
         <Paper sx={{ padding: '32px', width: '300px', backgroundColor: '#ffffff' }}>
             <Chip label="The Original Clap 🎶" color="primary" sx={{ display: 'flex', marginBottom: '60px' }} />
-            <Stack sx={{ display: 'flex', alignItems: 'center', position: 'relative' }}>
+            
+            <Stack sx={{ display: 'flex', alignItems: 'center', position: 'relative', padding: '32px' }}>
                 <animated.div
                     style={{
                         position: 'relative',
@@ -51,6 +54,7 @@ const MediumClap: FunctionComponent = () => {
                         <Typography variant="body2">{`+${addedClap}`}</Typography>
                     </IconButton>
                 </animated.div>
+                <Typography variant="body2" color="primary" sx={{ position: 'absolute', top: '6px' }}>{totalClap}</Typography>
                 <Stack 
                     onMouseEnter={() => setIsHover(true)}
                     onMouseLeave={() => setIsHover(false)}

@@ -3,6 +3,7 @@ import { RouteObject } from 'react-router-dom';
 import dynamic from 'next/dynamic';
 
 import PhishingIcon from '@mui/icons-material/Phishing';
+import TipsAndUpdatesIcon from '@mui/icons-material/TipsAndUpdates';
 
 const Home = dynamic(() => import('../pages/Home'), {
     suspense: true,
@@ -40,7 +41,7 @@ export const useDrawerList = () => useMemo<DrawerList[]>(
         {
             path: '/',
             title: 'Why this project?',
-            icon: <PhishingIcon />,
+            icon: <TipsAndUpdatesIcon />,
         },
         {
             path: '/custom-hooks',

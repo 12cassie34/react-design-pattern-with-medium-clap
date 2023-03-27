@@ -2,6 +2,7 @@ import { ReactNode, useMemo } from 'react';
 import { RouteObject } from 'react-router-dom';
 import dynamic from 'next/dynamic';
 
+import EmojiNatureIcon from '@mui/icons-material/EmojiNature';
 import PhishingIcon from '@mui/icons-material/Phishing';
 import TipsAndUpdatesIcon from '@mui/icons-material/TipsAndUpdates';
 
@@ -10,6 +11,9 @@ const Home = dynamic(() => import('../pages/Home'), {
 });
 const CustomHooks = dynamic(() => import('../pages/CustomHooks'), {
     suspense: true,
+});
+const CompoundComponent = dynamic(() => import('../pages/CompoundComponent'), {
+    suspense: true
 });
 const NotFound = dynamic(() => import('../pages/NotFound'), {
     suspense: true,
@@ -23,6 +27,10 @@ const routes: RouteObject[] = [
     {
         path: '/custom-hooks',
         element: <CustomHooks />,
+    },
+    {
+        path: '/compound-components',
+        element: <CompoundComponent />,
     },
     {
         path: '*',
@@ -48,6 +56,11 @@ export const useDrawerList = () => useMemo<DrawerList[]>(
             title: 'Custom Hooks',
             icon: <PhishingIcon />,
         },
+        {
+            path: '/compound-components',
+            title: 'Compound Components',
+            icon: <EmojiNatureIcon />
+        }
     ],
     [],
 );

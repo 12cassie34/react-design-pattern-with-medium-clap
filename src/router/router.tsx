@@ -4,6 +4,7 @@ import dynamic from 'next/dynamic';
 
 import EmojiNatureIcon from '@mui/icons-material/EmojiNature';
 import PhishingIcon from '@mui/icons-material/Phishing';
+import RepeatOneOnIcon from '@mui/icons-material/RepeatOneOn';
 import TipsAndUpdatesIcon from '@mui/icons-material/TipsAndUpdates';
 
 const Home = dynamic(() => import('../pages/Home'), {
@@ -13,6 +14,9 @@ const CustomHooks = dynamic(() => import('../pages/CustomHooks'), {
     suspense: true,
 });
 const CompoundComponent = dynamic(() => import('../pages/CompoundComponent'), {
+    suspense: true
+});
+const ControlledProps = dynamic(() => import('../pages/ControlledProps'), {
     suspense: true
 });
 const NotFound = dynamic(() => import('../pages/NotFound'), {
@@ -31,6 +35,10 @@ const routes: RouteObject[] = [
     {
         path: '/compound-components',
         element: <CompoundComponent />,
+    },
+    {
+        path: '/controlled-props',
+        element: <ControlledProps />
     },
     {
         path: '*',
@@ -60,7 +68,12 @@ export const useDrawerList = () => useMemo<DrawerList[]>(
             path: '/compound-components',
             title: 'Compound Components',
             icon: <EmojiNatureIcon />
-        }
+        },
+        {
+            path: '/controlled-props',
+            title: 'Controlled Props',
+            icon: <RepeatOneOnIcon />
+        },
     ],
     [],
 );

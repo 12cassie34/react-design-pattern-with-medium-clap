@@ -4,6 +4,7 @@ import Grid from '@mui/material/Grid';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 
+import ControlledPropsComponent from "../components/ControlledProps";
 import MediumClap from '../components/MediumClap';
 
 const ControlledProps: FunctionComponent = () => (
@@ -22,6 +23,10 @@ const ControlledProps: FunctionComponent = () => (
         <Typography variant='body1'>
             in a controlled props component.
         </Typography>
+        <Typography variant='body1'>
+            The practical usage is when you want to change the same state in different
+            components, the controlled props is really useful.
+        </Typography>
         <code>
             {`<MediumClap value={myStateValue} onCallback={updateStateCallback}>`}
         </code>
@@ -30,7 +35,7 @@ const ControlledProps: FunctionComponent = () => (
                 <MediumClap />
             </Grid>
             <Grid item>
-                todo
+                <ControlledPropsComponent />
             </Grid>
         </Grid>
     </Stack>

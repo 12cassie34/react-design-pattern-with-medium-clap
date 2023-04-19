@@ -14,7 +14,10 @@ const CustomHooks: FunctionComponent = () => (
             Custom Hooks let you share logic between components.
         </Typography>
         <Typography variant='body1'>
-            Strictly speaking, it&apos;s not a design patter, but it comes in handy when you want to reuse your logic.
+            Strictly speaking, it&apos;s not a design pattern, but it comes in handy when you want to reuse your logic.
+        </Typography>
+        <Typography variant='body1'>
+            The benefit of using the custom hook in this case is using the exactly same animation logic with total different UIs.
         </Typography>
         <Grid container spacing={4}>
             <Grid item>

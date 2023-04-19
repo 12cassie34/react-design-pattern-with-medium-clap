@@ -6,6 +6,7 @@ import EmojiNatureIcon from '@mui/icons-material/EmojiNature';
 import PhishingIcon from '@mui/icons-material/Phishing';
 import RepeatOneOnIcon from '@mui/icons-material/RepeatOneOn';
 import TipsAndUpdatesIcon from '@mui/icons-material/TipsAndUpdates';
+import WebhookIcon from '@mui/icons-material/Webhook';
 
 const Home = dynamic(() => import('../pages/Home'), {
     suspense: true,
@@ -17,6 +18,9 @@ const CompoundComponent = dynamic(() => import('../pages/CompoundComponent'), {
     suspense: true
 });
 const ControlledProps = dynamic(() => import('../pages/ControlledProps'), {
+    suspense: true
+});
+const MultipleCustomHooks = dynamic(() => import('../pages/MultipleCustomHooks'), {
     suspense: true
 });
 const NotFound = dynamic(() => import('../pages/NotFound'), {
@@ -39,6 +43,10 @@ const routes: RouteObject[] = [
     {
         path: '/controlled-props',
         element: <ControlledProps />
+    },
+    {
+        path: '/multiple-custom-hooks',
+        element: <MultipleCustomHooks />
     },
     {
         path: '*',
@@ -73,6 +81,11 @@ export const useDrawerList = () => useMemo<DrawerList[]>(
             path: '/controlled-props',
             title: 'Controlled Props',
             icon: <RepeatOneOnIcon />
+        },
+        {
+            path: '/multiple-custom-hooks',
+            title: 'Multiple Custom Hooks',
+            icon: <WebhookIcon />
         },
     ],
     [],

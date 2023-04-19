@@ -6,12 +6,12 @@ import Stack from '@mui/material/Stack';
 import ThumbUpIcon from '@mui/icons-material/ThumbUp';
 import Typography from "@mui/material/Typography";
 
-import useMediumClap from '../hooks/useMediumClap';
+import useMediumClap from './useMediumClap';
 
-import DisplayLayout from './DisplayLayout';
-import Streamers from './Streamers';
+import DisplayLayout from '../DisplayLayout';
+import Streamers from '../Streamers';
 
-const MediumClapCustomHook: FunctionComponent = () => {
+const SingleCustomHook: FunctionComponent = () => {
     const { 
         setIsHover, 
         addedClap, 
@@ -77,4 +77,4 @@ const MediumClapCustomHook: FunctionComponent = () => {
     )
 }
 
-export default MediumClapCustomHook;
+export default SingleCustomHook;

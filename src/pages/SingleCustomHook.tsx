@@ -5,9 +5,9 @@ import Stack from '@mui/material/Stack';
 
 import CustomHooksContent from '../components/CustomHooksContent';
 import MediumClap from '../components/MediumClap';
-import MediumClapCustomHook from '../components/MediumClapCustomHook';
+import SingleCustomHook from '../components/SingleCustomHook';
 
-const SingleCustomHooks: FunctionComponent = () => (
+const SingleCustomHookPage: FunctionComponent = () => (
     <Stack spacing={2}>
         <CustomHooksContent />
         <Grid container spacing={4}>
@@ -15,10 +15,10 @@ const SingleCustomHooks: FunctionComponent = () => (
                 <MediumClap />
             </Grid>
             <Grid item>
-                <MediumClapCustomHook />
+                <SingleCustomHook />
             </Grid>
         </Grid>
     </Stack>
 );
 
-export default SingleCustomHooks;
+export default SingleCustomHookPage;

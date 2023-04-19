@@ -1,10 +1,10 @@
 import { FunctionComponent } from 'react';
-import { animated } from "@react-spring/web";
+import { animated } from '@react-spring/web';
 
 import IconButton from '@mui/material/IconButton';
 import Stack from '@mui/material/Stack';
 import ThumbUpIcon from '@mui/icons-material/ThumbUp';
-import Typography from "@mui/material/Typography";
+import Typography from '@mui/material/Typography';
 
 import useClapAnimation from './useClapAnimation';
 import useClapsCount from './useClapsCount';

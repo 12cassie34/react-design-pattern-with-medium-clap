@@ -1,5 +1,5 @@
-import { Lookup, SpringRef } from "@react-spring/web";
-import { createContext } from "react";
+import { Lookup, SpringRef } from '@react-spring/web';
+import { createContext } from 'react';
 
 export interface MediumClapContextValue {
     isHover: boolean;

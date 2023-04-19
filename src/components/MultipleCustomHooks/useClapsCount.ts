@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState } from 'react';
 
 const useClapsCount = () => {
     const [addedClap, setAddedClap] = useState(0);

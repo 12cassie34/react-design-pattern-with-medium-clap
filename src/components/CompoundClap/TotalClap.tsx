@@ -1,6 +1,6 @@
-import { FunctionComponent, useContext } from "react";
+import { FunctionComponent, useContext } from 'react';
 
-import Typography from "@mui/material/Typography";
+import Typography from '@mui/material/Typography';
 
 import { MediumClapContext, MediumClapContextValue } from './ContextProvider';
 

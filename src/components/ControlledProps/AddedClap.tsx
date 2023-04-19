@@ -1,8 +1,8 @@
-import { FunctionComponent, useContext } from "react";
-import { animated } from "@react-spring/web";
+import { FunctionComponent, useContext } from 'react';
+import { animated } from '@react-spring/web';
 
 import IconButton from '@mui/material/IconButton';
-import Typography from "@mui/material/Typography";
+import Typography from '@mui/material/Typography';
 
 import { MediumClapContext, MediumClapContextValue } from './ContextProvider';
 

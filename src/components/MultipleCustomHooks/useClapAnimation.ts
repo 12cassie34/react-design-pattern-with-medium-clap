@@ -1,5 +1,5 @@
-import { useSpring } from "@react-spring/web";
-import { useState } from "react";
+import { useSpring } from '@react-spring/web';
+import { useState } from 'react';
 
 const useClapAnimation = () => {
     const [isHover, setIsHover] = useState(false);

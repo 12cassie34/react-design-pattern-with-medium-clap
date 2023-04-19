@@ -1,10 +1,10 @@
-import { FunctionComponent } from "react";
+import { FunctionComponent } from 'react';
 
 import Grid from '@mui/material/Grid';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 
-import CompoundClap from "../components/CompoundClap";
+import CompoundClap from '../components/CompoundClap';
 import MediumClap from '../components/MediumClap';
 
 const CompoundComponent: FunctionComponent = () => (

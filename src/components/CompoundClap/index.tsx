@@ -1,15 +1,15 @@
-import { FunctionComponent, useState } from "react";
-import { useSpring } from "@react-spring/web";
+import { FunctionComponent, useState } from 'react';
+import { useSpring } from '@react-spring/web';
 
 import Stack from '@mui/material/Stack';
 
 import { MediumClapContext } from './ContextProvider'; 
 
-import AddedClap from "./AddedClap";
-import ClapAnimation from "./ClapAnimation";
-import ClapButton from "./ClapButton";
-import DisplayLayout from "../DisplayLayout";
-import TotalClap from "./TotalClap";
+import AddedClap from './AddedClap';
+import ClapAnimation from './ClapAnimation';
+import ClapButton from './ClapButton';
+import DisplayLayout from '../DisplayLayout';
+import TotalClap from './TotalClap';
 
 const CompoundClap: FunctionComponent = () => {
     const [isHover, setIsHover] = useState(false);

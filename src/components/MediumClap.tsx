@@ -1,13 +1,13 @@
-import { animated, useSpring } from "@react-spring/web";
-import React, { FunctionComponent, useState } from "react";
+import { animated, useSpring } from '@react-spring/web';
+import React, { FunctionComponent, useState } from 'react';
 
 import IconButton from '@mui/material/IconButton';
 import Stack from '@mui/material/Stack';
 import ThumbUpIcon from '@mui/icons-material/ThumbUp';
-import Typography from "@mui/material/Typography";
+import Typography from '@mui/material/Typography';
 
-import DisplayLayout from "./DisplayLayout";
-import Streamers from "./Streamers";
+import DisplayLayout from './DisplayLayout';
+import Streamers from './Streamers';
 
 const MediumClap: FunctionComponent = () => {
     const [isHover, setIsHover] = useState(false);

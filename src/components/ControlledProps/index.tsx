@@ -1,8 +1,8 @@
-import { FunctionComponent, useState } from "react";
+import { FunctionComponent, useState } from 'react';
 
 import Grid from '@mui/material/Grid';
 
-import MediumClapContextProvider from "./MediumClapContext";
+import MediumClapContextProvider from './MediumClapContext';
 
 const ControlledPropsComponent: FunctionComponent = () => {
     const [clapValues, setClapValues] = useState({

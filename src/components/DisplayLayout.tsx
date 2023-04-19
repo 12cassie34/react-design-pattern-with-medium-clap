@@ -1,6 +1,6 @@
-import { FunctionComponent, PropsWithChildren } from "react";
+import { FunctionComponent, PropsWithChildren } from 'react';
 
-import Chip from "@mui/material/Chip";
+import Chip from '@mui/material/Chip';
 import Paper from '@mui/material/Paper';
 import Stack from '@mui/material/Stack';
 

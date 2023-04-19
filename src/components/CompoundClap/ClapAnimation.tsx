@@ -1,6 +1,6 @@
-import { FunctionComponent, useContext } from "react";
+import { FunctionComponent, useContext } from 'react';
 
-import { animated, useSpring } from "@react-spring/web";
+import { animated, useSpring } from '@react-spring/web';
 
 import { MediumClapContext, MediumClapContextValue } from './ContextProvider';
 

@@ -7,7 +7,7 @@ import Typography from '@mui/material/Typography';
 import MediumClap from '../components/MediumClap';
 import MediumClapCustomHook from '../components/MediumClapCustomHook';
 
-const CustomHooks: FunctionComponent = () => (
+const SingleCustomHooks: FunctionComponent = () => (
     <Stack spacing={2}>
         <Typography variant='h4'>Custom Hooks</Typography>
         <Typography variant='body1'>
@@ -30,4 +30,4 @@ const CustomHooks: FunctionComponent = () => (
     </Stack>
 );
 
-export default CustomHooks;
+export default SingleCustomHooks;

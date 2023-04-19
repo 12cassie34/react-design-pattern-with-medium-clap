@@ -10,7 +10,7 @@ import TipsAndUpdatesIcon from '@mui/icons-material/TipsAndUpdates';
 const Home = dynamic(() => import('../pages/Home'), {
     suspense: true,
 });
-const CustomHooks = dynamic(() => import('../pages/CustomHooks'), {
+const SingleCustomHook = dynamic(() => import('../pages/SingleCustomHook'), {
     suspense: true,
 });
 const CompoundComponent = dynamic(() => import('../pages/CompoundComponent'), {
@@ -29,8 +29,8 @@ const routes: RouteObject[] = [
         element: <Home />,
     },
     {
-        path: '/custom-hooks',
-        element: <CustomHooks />,
+        path: '/single-custom-hook',
+        element: <SingleCustomHook />,
     },
     {
         path: '/compound-components',
@@ -60,8 +60,8 @@ export const useDrawerList = () => useMemo<DrawerList[]>(
             icon: <TipsAndUpdatesIcon />,
         },
         {
-            path: '/custom-hooks',
-            title: 'Custom Hooks',
+            path: '/single-custom-hook',
+            title: 'Single Custom Hook',
             icon: <PhishingIcon />,
         },
         {

@@ -2,6 +2,7 @@ import { ReactNode, useMemo } from 'react';
 import { RouteObject } from 'react-router-dom';
 import dynamic from 'next/dynamic';
 
+import CategoryIcon from '@mui/icons-material/Category';
 import EmojiNatureIcon from '@mui/icons-material/EmojiNature';
 import PhishingIcon from '@mui/icons-material/Phishing';
 import RepeatOneOnIcon from '@mui/icons-material/RepeatOneOn';
@@ -21,6 +22,9 @@ const ControlledProps = dynamic(() => import('../pages/ControlledProps'), {
     suspense: true
 });
 const MultipleCustomHooks = dynamic(() => import('../pages/MultipleCustomHooks'), {
+    suspense: true
+});
+const PropsCollection = dynamic(() => import('../pages/PropsCollection'), {
     suspense: true
 });
 const NotFound = dynamic(() => import('../pages/NotFound'), {
@@ -47,6 +51,10 @@ const routes: RouteObject[] = [
     {
         path: '/multiple-custom-hooks',
         element: <MultipleCustomHooks />
+    },
+    {
+        path: '/props-collection',
+        element: <PropsCollection />
     },
     {
         path: '*',
@@ -87,6 +95,11 @@ export const useDrawerList = () => useMemo<DrawerList[]>(
             title: 'Multiple Custom Hooks',
             icon: <WebhookIcon />
         },
+        {
+            path: '/props-collection',
+            title: 'Props Collection',
+            icon: <CategoryIcon />
+        }
     ],
     [],
 );

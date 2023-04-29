@@ -4,6 +4,7 @@ import dynamic from 'next/dynamic';
 
 import CategoryIcon from '@mui/icons-material/Category';
 import EmojiNatureIcon from '@mui/icons-material/EmojiNature';
+import KeyboardReturnIcon from '@mui/icons-material/KeyboardReturn';
 import PhishingIcon from '@mui/icons-material/Phishing';
 import RepeatOneOnIcon from '@mui/icons-material/RepeatOneOn';
 import TipsAndUpdatesIcon from '@mui/icons-material/TipsAndUpdates';
@@ -25,6 +26,9 @@ const MultipleCustomHooks = dynamic(() => import('../pages/MultipleCustomHooks')
     suspense: true
 });
 const PropsCollection = dynamic(() => import('../pages/PropsCollection'), {
+    suspense: true
+});
+const PropsGetter = dynamic(() => import('../pages/PropsGetter'), {
     suspense: true
 });
 const NotFound = dynamic(() => import('../pages/NotFound'), {
@@ -55,6 +59,10 @@ const routes: RouteObject[] = [
     {
         path: '/props-collection',
         element: <PropsCollection />
+    },
+    {
+        path: '/props-getter',
+        element: <PropsGetter />
     },
     {
         path: '*',
@@ -99,6 +107,11 @@ export const useDrawerList = () => useMemo<DrawerList[]>(
             path: '/props-collection',
             title: 'Props Collection',
             icon: <CategoryIcon />
+        },
+        {
+            path: '/props-getter',
+            title: 'Props Getter',
+            icon: <KeyboardReturnIcon />
         }
     ],
     [],

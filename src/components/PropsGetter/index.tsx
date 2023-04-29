@@ -26,7 +26,7 @@ const ClapContainer: FunctionComponent<PropsWithChildren<ClapContainerProps>> = 
     </IconButton>
     )
 
-const PropsCollection: FunctionComponent = () => {
+const PropsGetter: FunctionComponent = () => {
     const { clapAddedAnimation, boxShadowAnimation, streamersAnimation, setIsHover, clapAddedApi, streamersApi } = useClapAnimation();
     const { addedClap, totalClap, setAddedClap, setTotalClap } = useClapsCount();
 
@@ -46,10 +46,14 @@ const PropsCollection: FunctionComponent = () => {
         }
     };
 
-    const clapContainerProps = {
-        'aria-valuenow': totalClap,
+    const getClapContainerProps = () => 
+        // Here, your can do some complicated operation before passing 
+        // props in <ClapContainer />
+         ({
+            'aria-valuenow': totalClap,
         'aria-valuemax': 50
-    }
+        })
+    
 
     return (
         <DisplayLayout chipLabel='Props Collection 🔡'>
@@ -95,11 +99,11 @@ const PropsCollection: FunctionComponent = () => {
                     >
                     <Streamers />
                 </animated.div>
-                <ClapContainer handleClick={handleAddedClap} {...clapContainerProps} >
+                <ClapContainer handleClick={handleAddedClap} {...getClapContainerProps()} >
                     <Typography variant='body1'>Thumb UP</Typography>
                 </ClapContainer>
             </Stack>
         </DisplayLayout>);
 }
 
-export default PropsCollection;
+export default PropsGetter;

@@ -1,10 +1,10 @@
 import { FunctionComponent } from "react";
 
-import Grid from '@mui/material/Grid';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 
-import MediumClap from '../components/MediumClap';
+import ComparisonSection from "../components/ComparisonSection";
+import MultipleCustomHooks from "../components/MultipleCustomHooks";
 import PropsCollection from "../components/PropsCollection";
 
 const PropsCollectionPage: FunctionComponent = () => (
@@ -13,14 +13,12 @@ const PropsCollectionPage: FunctionComponent = () => (
         <Typography variant='body1'>
             We can use this technique to allow users use their own UI with our clap animation logics.
         </Typography>
-        <Grid container spacing={4}>
-            <Grid item>
-                <MediumClap />
-            </Grid>
-            <Grid item>
-                <PropsCollection />
-            </Grid>
-        </Grid>
+        <ComparisonSection
+            beforeComponent={<MultipleCustomHooks />}
+            beforeSourceCode="https://github.com/12cassie34/react-design-pattern-with-medium-clap/tree/main/src/components/MultipleCustomHooks"
+            afterComponent={<PropsCollection />}
+            afterSourceCode="https://github.com/12cassie34/react-design-pattern-with-medium-clap/tree/main/src/components/PropsCollection"
+        />
     </Stack>
 )
 

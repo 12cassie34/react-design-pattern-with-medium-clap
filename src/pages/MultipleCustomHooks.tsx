@@ -1,23 +1,21 @@
 import { FunctionComponent } from 'react';
 
-import Grid from '@mui/material/Grid';
 import Stack from '@mui/material/Stack';
 
+import ComparisonSection from '../components/ComparisonSection';
+import ControlledPropsComponent from '../components/ControlledProps';
 import CustomHooksContent from '../components/CustomHooksContent';
-import MediumClap from '../components/MediumClap';
 import MultipleCustomHooks from '../components/MultipleCustomHooks';
 
 const MultipleCustomHooksPage: FunctionComponent = () => (
     <Stack spacing={2}>
         <CustomHooksContent />
-        <Grid container spacing={4}>
-            <Grid item>
-                <MediumClap />
-            </Grid>
-            <Grid item>
-                <MultipleCustomHooks />
-            </Grid>
-        </Grid>
+        <ComparisonSection
+            beforeComponent={<ControlledPropsComponent />}
+            beforeSourceCode="https://github.com/12cassie34/react-design-pattern-with-medium-clap/tree/main/src/components/ControlledProps"
+            afterComponent={<MultipleCustomHooks />}
+            afterSourceCode="https://github.com/12cassie34/react-design-pattern-with-medium-clap/tree/main/src/components/MultipleCustomHooks"
+        />
     </Stack>
 )
 

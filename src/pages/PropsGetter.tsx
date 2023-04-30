@@ -1,10 +1,10 @@
 import { FunctionComponent } from "react";
 
-import Grid from '@mui/material/Grid';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 
-import MediumClap from '../components/MediumClap';
+import ComparisonSection from "../components/ComparisonSection";
+import PropsCollection from "../components/PropsCollection";
 import PropsGetter from "../components/PropsGetter";
 
 const PropsGetterPage: FunctionComponent = () => (
@@ -18,14 +18,12 @@ const PropsGetterPage: FunctionComponent = () => (
             We will return an object, but within the function, we can do some complicated operation.
             And that is the strength of the props getter.
         </Typography>
-        <Grid container spacing={4}>
-            <Grid item>
-                <MediumClap />
-            </Grid>
-            <Grid item>
-                <PropsGetter />
-            </Grid>
-        </Grid>
+        <ComparisonSection
+            beforeComponent={<PropsCollection />}
+            beforeSourceCode="https://github.com/12cassie34/react-design-pattern-with-medium-clap/tree/main/src/components/PropsCollection"
+            afterComponent={<PropsGetter />}
+            afterSourceCode="https://github.com/12cassie34/react-design-pattern-with-medium-clap/tree/main/src/components/PropsGetter"
+        />
     </Stack>
 )
 

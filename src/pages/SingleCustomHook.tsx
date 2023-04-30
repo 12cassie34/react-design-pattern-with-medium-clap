@@ -1,8 +1,8 @@
 import { FunctionComponent } from 'react';
 
-import Grid from '@mui/material/Grid';
 import Stack from '@mui/material/Stack';
 
+import ComparisonSection from '../components/ComparisonSection';
 import CustomHooksContent from '../components/CustomHooksContent';
 import MediumClap from '../components/MediumClap';
 import SingleCustomHook from '../components/SingleCustomHook';
@@ -10,14 +10,12 @@ import SingleCustomHook from '../components/SingleCustomHook';
 const SingleCustomHookPage: FunctionComponent = () => (
     <Stack spacing={2}>
         <CustomHooksContent />
-        <Grid container spacing={4}>
-            <Grid item>
-                <MediumClap />
-            </Grid>
-            <Grid item>
-                <SingleCustomHook />
-            </Grid>
-        </Grid>
+        <ComparisonSection 
+            beforeComponent={<MediumClap />}
+            beforeSourceCode="https://github.com/12cassie34/react-design-pattern-with-medium-clap/blob/main/src/components/MediumClap.tsx"
+            afterComponent={<SingleCustomHook />}
+            afterSourceCode="https://github.com/12cassie34/react-design-pattern-with-medium-clap/tree/main/src/components/SingleCustomHook"
+        />
     </Stack>
 );
 

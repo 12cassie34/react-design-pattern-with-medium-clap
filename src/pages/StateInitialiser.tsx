@@ -1,10 +1,10 @@
 import { FunctionComponent } from "react";
 
-import Grid from '@mui/material/Grid';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 
-import MediumClap from '../components/MediumClap';
+import ComparisonSection from "../components/ComparisonSection";
+import PropsGetter from "../components/PropsGetter";
 import StateInitialiser from "../components/StateInitialiser";
 
 const StateInitialiserPage: FunctionComponent = () => (
@@ -18,14 +18,12 @@ const StateInitialiserPage: FunctionComponent = () => (
             and also make it possible for them at any point in time to reset the state of the components 
             to the initial state.
         </Typography>
-        <Grid container spacing={4}>
-            <Grid item>
-                <MediumClap />
-            </Grid>
-            <Grid item>
-                <StateInitialiser />
-            </Grid>
-        </Grid>
+        <ComparisonSection
+            beforeComponent={<PropsGetter />}
+            beforeSourceCode="https://github.com/12cassie34/react-design-pattern-with-medium-clap/tree/main/src/components/PropsGetter"
+            afterComponent={<StateInitialiser />}
+            afterSourceCode="https://github.com/12cassie34/react-design-pattern-with-medium-clap/tree/main/src/components/StateInitialiser"
+        />
     </Stack>
 )
 

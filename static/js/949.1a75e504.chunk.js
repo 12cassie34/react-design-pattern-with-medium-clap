@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkreact_design_pattern_with_medium_clap=self.webpackChunkreact_design_pattern_with_medium_clap||[]).push([[949],{4949:function(e,t,n){n.r(t);var i=n(184);t.default=function(){return(0,i.jsx)("h1",{children:"Oops, something went wrong"})}}}]);
+//# sourceMappingURL=949.1a75e504.chunk.js.map

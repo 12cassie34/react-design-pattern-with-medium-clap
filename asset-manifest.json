@@ -1,0 +1,42 @@
+{
+  "files": {
+    "main.css": "/react-design-pattern-with-medium-clap/static/css/main.8a685450.css",
+    "main.js": "/react-design-pattern-with-medium-clap/static/js/main.08b6883f.js",
+    "static/js/293.ce24ac43.chunk.js": "/react-design-pattern-with-medium-clap/static/js/293.ce24ac43.chunk.js",
+    "static/js/996.1520436f.chunk.js": "/react-design-pattern-with-medium-clap/static/js/996.1520436f.chunk.js",
+    "static/js/914.58e76b9b.chunk.js": "/react-design-pattern-with-medium-clap/static/js/914.58e76b9b.chunk.js",
+    "static/js/940.b4d2f50b.chunk.js": "/react-design-pattern-with-medium-clap/static/js/940.b4d2f50b.chunk.js",
+    "static/js/95.4b2807b7.chunk.js": "/react-design-pattern-with-medium-clap/static/js/95.4b2807b7.chunk.js",
+    "static/js/612.2cd32e76.chunk.js": "/react-design-pattern-with-medium-clap/static/js/612.2cd32e76.chunk.js",
+    "static/js/409.c5d4098b.chunk.js": "/react-design-pattern-with-medium-clap/static/js/409.c5d4098b.chunk.js",
+    "static/js/647.52c016a6.chunk.js": "/react-design-pattern-with-medium-clap/static/js/647.52c016a6.chunk.js",
+    "static/js/927.22da7c32.chunk.js": "/react-design-pattern-with-medium-clap/static/js/927.22da7c32.chunk.js",
+    "static/js/949.1a75e504.chunk.js": "/react-design-pattern-with-medium-clap/static/js/949.1a75e504.chunk.js",
+    "static/js/787.7bca0246.chunk.js": "/react-design-pattern-with-medium-clap/static/js/787.7bca0246.chunk.js",
+    "static/js/154.1a477970.chunk.js": "/react-design-pattern-with-medium-clap/static/js/154.1a477970.chunk.js",
+    "static/js/889.0b321017.chunk.js": "/react-design-pattern-with-medium-clap/static/js/889.0b321017.chunk.js",
+    "static/js/299.2cb4c7dc.chunk.js": "/react-design-pattern-with-medium-clap/static/js/299.2cb4c7dc.chunk.js",
+    "index.html": "/react-design-pattern-with-medium-clap/index.html",
+    "static/media/_interop_require_default.cjs": "/react-design-pattern-with-medium-clap/static/media/_interop_require_default.9765e935c5a6e5dec7f6.cjs",
+    "main.8a685450.css.map": "/react-design-pattern-with-medium-clap/static/css/main.8a685450.css.map",
+    "main.08b6883f.js.map": "/react-design-pattern-with-medium-clap/static/js/main.08b6883f.js.map",
+    "293.ce24ac43.chunk.js.map": "/react-design-pattern-with-medium-clap/static/js/293.ce24ac43.chunk.js.map",
+    "996.1520436f.chunk.js.map": "/react-design-pattern-with-medium-clap/static/js/996.1520436f.chunk.js.map",
+    "914.58e76b9b.chunk.js.map": "/react-design-pattern-with-medium-clap/static/js/914.58e76b9b.chunk.js.map",
+    "940.b4d2f50b.chunk.js.map": "/react-design-pattern-with-medium-clap/static/js/940.b4d2f50b.chunk.js.map",
+    "95.4b2807b7.chunk.js.map": "/react-design-pattern-with-medium-clap/static/js/95.4b2807b7.chunk.js.map",
+    "612.2cd32e76.chunk.js.map": "/react-design-pattern-with-medium-clap/static/js/612.2cd32e76.chunk.js.map",
+    "409.c5d4098b.chunk.js.map": "/react-design-pattern-with-medium-clap/static/js/409.c5d4098b.chunk.js.map",
+    "647.52c016a6.chunk.js.map": "/react-design-pattern-with-medium-clap/static/js/647.52c016a6.chunk.js.map",
+    "927.22da7c32.chunk.js.map": "/react-design-pattern-with-medium-clap/static/js/927.22da7c32.chunk.js.map",
+    "949.1a75e504.chunk.js.map": "/react-design-pattern-with-medium-clap/static/js/949.1a75e504.chunk.js.map",
+    "787.7bca0246.chunk.js.map": "/react-design-pattern-with-medium-clap/static/js/787.7bca0246.chunk.js.map",
+    "154.1a477970.chunk.js.map": "/react-design-pattern-with-medium-clap/static/js/154.1a477970.chunk.js.map",
+    "889.0b321017.chunk.js.map": "/react-design-pattern-with-medium-clap/static/js/889.0b321017.chunk.js.map",
+    "299.2cb4c7dc.chunk.js.map": "/react-design-pattern-with-medium-clap/static/js/299.2cb4c7dc.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8a685450.css",
+    "static/js/main.08b6883f.js"
+  ]
+}

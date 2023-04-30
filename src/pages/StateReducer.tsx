@@ -1,10 +1,10 @@
 import { FunctionComponent } from "react";
 
-import Grid from '@mui/material/Grid';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 
-import MediumClap from '../components/MediumClap';
+import ComparisonSection from "../components/ComparisonSection";
+import StateInitialiser from "../components/StateInitialiser";
 import StateReducer from "../components/StateReducer";
 
 const StateReducerPage: FunctionComponent = () => (
@@ -20,14 +20,12 @@ const StateReducerPage: FunctionComponent = () => (
             And we are going to pass that reducer a state and an action object, 
             and they can go ahead and return new state.
         </Typography>
-        <Grid container spacing={4}>
-            <Grid item>
-                <MediumClap />
-            </Grid>
-            <Grid item>
-                <StateReducer />
-            </Grid>
-        </Grid>
+        <ComparisonSection
+            beforeComponent={<StateInitialiser />}
+            beforeSourceCode="https://github.com/12cassie34/react-design-pattern-with-medium-clap/tree/main/src/components/StateInitialiser"
+            afterComponent={<StateReducer />}
+            afterSourceCode="https://github.com/12cassie34/react-design-pattern-with-medium-clap/tree/main/src/components/StateReducer"
+        />
     </Stack>
 )
 

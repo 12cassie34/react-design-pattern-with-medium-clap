@@ -1,11 +1,11 @@
 import { FunctionComponent } from 'react';
 
-import Grid from '@mui/material/Grid';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 
+import ComparisonSection from '../components/ComparisonSection';
 import CompoundClap from '../components/CompoundClap';
-import MediumClap from '../components/MediumClap';
+import SingleCustomHook from '../components/SingleCustomHook';
 
 const CompoundComponent: FunctionComponent = () => (
     <Stack spacing={2}>
@@ -22,14 +22,12 @@ const CompoundComponent: FunctionComponent = () => (
         <Typography variant='body1'>
             <b>Props Overload</b>: we can ship precisely the right props to the right components.
         </Typography>
-        <Grid container spacing={4}>
-            <Grid item>
-                <MediumClap />
-            </Grid>
-            <Grid item>
-                <CompoundClap />
-            </Grid>
-        </Grid>
+        <ComparisonSection 
+            beforeComponent={<SingleCustomHook />}
+            beforeSourceCode="https://github.com/12cassie34/react-design-pattern-with-medium-clap/tree/main/src/components/SingleCustomHook"
+            afterComponent={<CompoundClap />}
+            afterSourceCode="https://github.com/12cassie34/react-design-pattern-with-medium-clap/tree/main/src/components/CompoundClap"
+        />
     </Stack>
     )
 

@@ -1,11 +1,11 @@
 import { FunctionComponent } from 'react';
 
-import Grid from '@mui/material/Grid';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 
+import ComparisonSection from '../components/ComparisonSection';
+import CompoundClap from '../components/CompoundClap';
 import ControlledPropsComponent from '../components/ControlledProps';
-import MediumClap from '../components/MediumClap';
 
 const ControlledProps: FunctionComponent = () => (
     <Stack spacing={2}>
@@ -30,14 +30,12 @@ const ControlledProps: FunctionComponent = () => (
         <code>
             {`<MediumClap value={myStateValue} onCallback={updateStateCallback}>`}
         </code>
-        <Grid container spacing={4}>
-            <Grid item>
-                <MediumClap />
-            </Grid>
-            <Grid item>
-                <ControlledPropsComponent />
-            </Grid>
-        </Grid>
+        <ComparisonSection
+            beforeComponent={<CompoundClap />}
+            beforeSourceCode="https://github.com/12cassie34/react-design-pattern-with-medium-clap/tree/main/src/components/CompoundClap"
+            afterComponent={<ControlledPropsComponent />}
+            afterSourceCode="https://github.com/12cassie34/react-design-pattern-with-medium-clap/tree/main/src/components/ControlledProps"
+        />
     </Stack>
     )
 

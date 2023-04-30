@@ -7,6 +7,7 @@ import CategoryIcon from '@mui/icons-material/Category';
 import EmojiNatureIcon from '@mui/icons-material/EmojiNature';
 import KeyboardReturnIcon from '@mui/icons-material/KeyboardReturn';
 import PhishingIcon from '@mui/icons-material/Phishing';
+import ReduceCapacityIcon from '@mui/icons-material/ReduceCapacity';
 import RepeatOneOnIcon from '@mui/icons-material/RepeatOneOn';
 import TipsAndUpdatesIcon from '@mui/icons-material/TipsAndUpdates';
 import WebhookIcon from '@mui/icons-material/Webhook';
@@ -33,6 +34,9 @@ const PropsGetter = dynamic(() => import('../pages/PropsGetter'), {
     suspense: true
 });
 const StateInitialiser = dynamic(() => import('../pages/StateInitialiser'), {
+    suspense: true
+});
+const StateReducer = dynamic(() => import('../pages/StateReducer'), {
     suspense: true
 });
 const NotFound = dynamic(() => import('../pages/NotFound'), {
@@ -71,6 +75,10 @@ const routes: RouteObject[] = [
     {
         path: '/state-initialiser',
         element: <StateInitialiser />
+    },
+    {
+        path: '/state-reducer',
+        element: <StateReducer />
     },
     {
         path: '*',
@@ -125,6 +133,11 @@ export const useDrawerList = () => useMemo<DrawerList[]>(
             path: '/state-initialiser',
             title: 'State Initialiser',
             icon: <CakeIcon />
+        },
+        {
+            path: '/state-reducer',
+            title: 'State Reducer',
+            icon: <ReduceCapacityIcon />
         }
     ],
     [],

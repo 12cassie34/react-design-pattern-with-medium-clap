@@ -8,7 +8,7 @@ import ThumbUpIcon from '@mui/icons-material/ThumbUp';
 import Typography from '@mui/material/Typography';
 
 import useClapAnimation from './useClapAnimation';
-import useClapsCount from './useClapsCount';
+import useClapsCount, { Actions, ClapAction, ClapState, internalReducer } from './useClapsCount';
 
 import DisplayLayout from '../DisplayLayout';
 import Streamers from '../Streamers';
@@ -31,12 +31,24 @@ const ClapContainer: FunctionComponent<PropsWithChildren<ClapContainerProps>> = 
 const StateReducer: FunctionComponent = () => {
     const [isReset, setIsReset] = useState(false);
 
+    const [timesOfClap, setTimesOfClap] = useState(0);
+    const isClappedTooMuch = timesOfClap > 5;
+
+    const customReducer = ({ addedClap, totalClap }: ClapState, action: Actions) => {
+        if (action.type === ClapAction.Add && isClappedTooMuch) {
+          return { addedClap, totalClap }
+        }
+        return internalReducer({ addedClap, totalClap }, action)
+      }
+
     const { clapAddedAnimation, boxShadowAnimation, streamersAnimation, setIsHover, clapAddedApi, streamersApi } = useClapAnimation();
     const { clapValues, handleAddClap, resetClapCounts, resetDep } = useClapsCount({
         initialAddedClap: 0,
-        initialTotalClap: 200
+        initialTotalClap: 200,
+        customReducer
     });
     
+
 
     const handleAddedClap = () => {
         if (clapValues.addedClap < 50) {
@@ -50,6 +62,7 @@ const StateReducer: FunctionComponent = () => {
                 to: { opacity: 0, transform: 'scale(1)' }
             });
             handleAddClap();
+            setTimesOfClap(prevSetTimesOfClap => prevSetTimesOfClap + 1);
         }
     };
 
@@ -121,6 +134,9 @@ const StateReducer: FunctionComponent = () => {
                     </ClapContainer>
                 </Stack>
             </DisplayLayout>
+            {isClappedTooMuch && <Typography sx={{
+                color: 'red'
+            }}>You clapped too mush, do be so generous :D</Typography>}
             {isReset && <Typography>Is resetting {resetDep}...</Typography>}
             <Button onClick={resetClapCounts} sx={{
                 display: 'block',

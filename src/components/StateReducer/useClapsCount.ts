@@ -1,20 +1,20 @@
 import { useCallback, useReducer, useRef } from 'react';
 
-enum ClapAction {
+export enum ClapAction {
     Add = 'add',
     Reset = 'reset',
 }
 
-interface ClapState {
+export interface ClapState {
     addedClap: number;
     totalClap: number;
 }
 
 type ActionAdd = { type: ClapAction.Add };
 type ActionRest = { type: ClapAction.Reset; payload: ClapState };
-type Actions = ActionAdd | ActionRest;
+export type Actions = ActionAdd | ActionRest;
   
-const reducer = ({ addedClap, totalClap }: ClapState, action: Actions) => {
+export const internalReducer = ({ addedClap, totalClap }: ClapState, action: Actions) => {
     switch (action.type) {
         case ClapAction.Add:
           return {
@@ -31,13 +31,14 @@ const reducer = ({ addedClap, totalClap }: ClapState, action: Actions) => {
 interface UseClapsCountProps {
     initialAddedClap?: number;
     initialTotalClap?: number;
+    customReducer?: ({ addedClap, totalClap }: ClapState, action: Actions) => ClapState;
 }
 
-const useClapsCount = ({ initialAddedClap = 0, initialTotalClap = 200 }: UseClapsCountProps) => {
+const useClapsCount = ({ initialAddedClap = 0, initialTotalClap = 200, customReducer = internalReducer }: UseClapsCountProps) => {
     const initialValues = useRef({ initialAddedClap, initialTotalClap });
     const resetCount = useRef(0);
 
-    const [clapValues, dispatch] = useReducer(reducer, { addedClap: initialAddedClap, totalClap: initialTotalClap });
+    const [clapValues, dispatch] = useReducer(customReducer, { addedClap: initialAddedClap, totalClap: initialTotalClap });
 
     const handleAddClap = () => dispatch({
         type: ClapAction.Add

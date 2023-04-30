@@ -2,6 +2,7 @@ import { ReactNode, useMemo } from 'react';
 import { RouteObject } from 'react-router-dom';
 import dynamic from 'next/dynamic';
 
+import CakeIcon from '@mui/icons-material/Cake';
 import CategoryIcon from '@mui/icons-material/Category';
 import EmojiNatureIcon from '@mui/icons-material/EmojiNature';
 import KeyboardReturnIcon from '@mui/icons-material/KeyboardReturn';
@@ -29,6 +30,9 @@ const PropsCollection = dynamic(() => import('../pages/PropsCollection'), {
     suspense: true
 });
 const PropsGetter = dynamic(() => import('../pages/PropsGetter'), {
+    suspense: true
+});
+const StateInitialiser = dynamic(() => import('../pages/StateInitialiser'), {
     suspense: true
 });
 const NotFound = dynamic(() => import('../pages/NotFound'), {
@@ -63,6 +67,10 @@ const routes: RouteObject[] = [
     {
         path: '/props-getter',
         element: <PropsGetter />
+    },
+    {
+        path: '/state-initialiser',
+        element: <StateInitialiser />
     },
     {
         path: '*',
@@ -112,6 +120,11 @@ export const useDrawerList = () => useMemo<DrawerList[]>(
             path: '/props-getter',
             title: 'Props Getter',
             icon: <KeyboardReturnIcon />
+        },
+        {
+            path: '/state-initialiser',
+            title: 'State Initialiser',
+            icon: <CakeIcon />
         }
     ],
     [],

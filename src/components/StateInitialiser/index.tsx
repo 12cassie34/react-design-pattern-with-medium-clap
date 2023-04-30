@@ -1,8 +1,10 @@
-import { FunctionComponent, PropsWithChildren } from 'react';
+import { FunctionComponent, PropsWithChildren, useEffect, useState } from 'react';
 import { animated } from '@react-spring/web';
 
+import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import Stack from '@mui/material/Stack';
+import ThumbUpIcon from '@mui/icons-material/ThumbUp';
 import Typography from '@mui/material/Typography';
 
 import useClapAnimation from './useClapAnimation';
@@ -26,9 +28,15 @@ const ClapContainer: FunctionComponent<PropsWithChildren<ClapContainerProps>> = 
     </IconButton>
     )
 
-const PropsGetter: FunctionComponent = () => {
+const StateInitialiser: FunctionComponent = () => {
+    const [isReset, setIsReset] = useState(false);
+
     const { clapAddedAnimation, boxShadowAnimation, streamersAnimation, setIsHover, clapAddedApi, streamersApi } = useClapAnimation();
-    const { addedClap, totalClap, setAddedClap, setTotalClap } = useClapsCount();
+    const { addedClap, totalClap, setAddedClap, setTotalClap, resetClapCounts, resetDep } = useClapsCount({
+        initialAddedClap: 0,
+        initialTotalClap: 200
+    });
+    
 
     const handleAddedClap = () => {
         if (addedClap < 50) {
@@ -51,37 +59,47 @@ const PropsGetter: FunctionComponent = () => {
         // props in <ClapContainer />
          ({
             'aria-valuenow': totalClap,
-        'aria-valuemax': 50
+            'aria-valuemax': 50
         })
-    
 
+    useEffect(() => {
+        setIsReset(true);
+
+        const timeoutId = setTimeout(() => {
+            setIsReset(false);
+        }, 2_000);
+
+        return () => clearTimeout(timeoutId);
+    }, [setIsReset, resetDep]);
+    
     return (
-        <DisplayLayout chipLabel='Props Getter 🛬'>
-            <animated.div
+        <>
+            <DisplayLayout chipLabel='State Initialiser 🎂'>
+                <animated.div
                     style={{
                         position: 'relative',
                         opacity: 0,
                         ...clapAddedAnimation
                     }}
                 >
-                <IconButton sx={{
+                    <IconButton sx={{
                         padding: '20px',
                         backgroundColor: '#90caf9',
                         width: '20px',
                         height: '20px',
                     }}>
-                    <Typography variant="body2">{`+${addedClap}`}</Typography>
-                </IconButton>
-            </animated.div>
-            <Typography variant="body2" color="primary" sx={{ position: 'absolute', top: '6px' }}>{totalClap}</Typography>
-            <Stack 
+                        <Typography variant="body2">{`+${addedClap}`}</Typography>
+                    </IconButton>
+                </animated.div>
+                <Typography variant="body2" color="primary" sx={{ position: 'absolute', top: '6px' }}>{totalClap}</Typography>
+                <Stack 
                     onMouseEnter={() => setIsHover(true)}
                     onMouseLeave={() => setIsHover(false)}
                     sx={{
                         position: 'absolute'
                     }}
                 >
-                <animated.div
+                    <animated.div
                         style={{
                             borderRadius: '50%',
                             width: '60px',
@@ -91,19 +109,25 @@ const PropsGetter: FunctionComponent = () => {
                             ...boxShadowAnimation,
                         }}
                     />
-                <animated.div
+                    <animated.div
                         style={{
                             opacity: 0,
                             ...streamersAnimation
                         }}
                     >
-                    <Streamers />
-                </animated.div>
-                <ClapContainer handleClick={handleAddedClap} {...getClapContainerProps()} >
-                    <Typography variant='body1'>Thumb UP</Typography>
-                </ClapContainer>
-            </Stack>
-        </DisplayLayout>);
+                        <Streamers />
+                    </animated.div>
+                    <ClapContainer handleClick={handleAddedClap} {...getClapContainerProps()} >
+                        <ThumbUpIcon />
+                    </ClapContainer>
+                </Stack>
+            </DisplayLayout>
+            {isReset && <Typography>Is resetting {resetDep}...</Typography>}
+            <Button onClick={resetClapCounts} sx={{
+                display: 'block',
+                margin: '0 auto'
+            }}>Reset</Button>
+        </>);
 }
 
-export default PropsGetter;
+export default StateInitialiser;

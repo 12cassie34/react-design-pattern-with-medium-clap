@@ -2,6 +2,7 @@
   "name": "react-design-pattern-with-medium-clap",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://12cassie34.github.io/react-design-pattern-with-medium-clap",
   "dependencies": {
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
@@ -38,7 +39,9 @@
     "eject": "react-scripts eject",
     "linter": "npx eslint . --ext .js,.jsx,.ts,.tsx --fix",
     "prepare": "husky install",
-    "scriptname": "husky install"
+    "scriptname": "husky install",
+    "predeploy": "yarn react-scripts build",
+    "deploy": "gh-pages -d build"
   },
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx}": "npx eslint . --ext .js,.jsx,.ts,.tsx --fix"
@@ -65,7 +68,8 @@
     "@react-spring/types": "^9.7.1",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-prettier": "^8.6.0",
-    "eslint-import-resolver-typescript": "^3.5.3"
+    "eslint-import-resolver-typescript": "^3.5.3",
+    "gh-pages": "^5.0.0"
   },
   "main": "index.js",
   "repository": "https://github.com/12cassie34/react-design-pattern-with-medium-clap.git",

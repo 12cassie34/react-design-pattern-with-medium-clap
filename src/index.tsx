@@ -18,7 +18,7 @@ const root = ReactDOM.createRoot(appContainer);
 root.render(
   <React.StrictMode>
     <ThemeProvider theme={darkTheme}>
-      <HashRouter basename="/react-design-pattern-with-medium-clap">
+      <HashRouter>
         <App>
           <Routes>
           {routes.map(({ path, element }: RouteObject) => (
@@ -26,7 +26,6 @@ root.render(
             )
           )}
           </Routes>
-          
         </App>
       </HashRouter >
     </ThemeProvider>

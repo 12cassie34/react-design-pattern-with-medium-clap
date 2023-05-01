@@ -2,7 +2,7 @@
   "name": "react-design-pattern-with-medium-clap",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://12cassie34.github.io/react-design-pattern-with-medium-clap",
+  "homepage": "/react-design-pattern-with-medium-clap/#",
   "dependencies": {
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",

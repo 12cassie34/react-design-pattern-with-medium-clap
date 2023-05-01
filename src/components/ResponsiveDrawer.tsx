@@ -1,12 +1,11 @@
 import { FunctionComponent, useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { useTheme } from '@mui/material/styles';
 
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
 import IconButton from '@mui/material/IconButton';
-import Link from '@mui/material/Link';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
@@ -33,7 +32,7 @@ const ResponsiveDrawer: FunctionComponent = () => {
         <List>
             {drawerList.map(({ path, title, icon }) => (
                 <ListItem key={title}>
-                    <Link href={path} underline="none" color="#ffffff" sx={{ backgroundColor: currentPath === path ? theme.palette.info.main : '', borderRadius: '10px' }}>
+                    <Link to={path} style={{ textDecoration: 'none', color: "#ffffff", backgroundColor: currentPath === path ? theme.palette.info.main : '' }}>
                         <ListItemButton>
                             <ListItemIcon>
                                 {icon}

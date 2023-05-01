@@ -1,5 +1,5 @@
 /* eslint-disable react/jsx-indent */
-import { BrowserRouter, useRoutes } from 'react-router-dom';
+import { HashRouter, Route, RouteObject, Routes } from 'react-router-dom';
 import { ThemeProvider } from '@mui/material/styles';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
@@ -15,20 +15,20 @@ const appContainer = document.getElementById('root') as Element | DocumentFragme
 
 const root = ReactDOM.createRoot(appContainer);
 
-const Routes = () => {
-  const element = useRoutes(routes);
-
-  return element;
-};
-
 root.render(
   <React.StrictMode>
     <ThemeProvider theme={darkTheme}>
-      <BrowserRouter>
+      <HashRouter basename="/">
         <App>
-          <Routes />
+          <Routes>
+          {routes.map(({ path, element }: RouteObject) => (
+              <Route key={path || ''} path={path || ''} element={element} />
+            )
+          )}
+          </Routes>
+          
         </App>
-      </BrowserRouter>
+      </HashRouter >
     </ThemeProvider>
   </React.StrictMode>,
 );
